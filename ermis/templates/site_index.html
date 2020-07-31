@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% comment %}
+This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs. 
+{% endcomment %}
+  {% block hero %}
+  <div class="jumbotron">
+    <div class="container">
+     <!-- <h1>{% trans "Welcome" %} at Ermis-F Geoportal</h1>
+      <p>{% blocktrans %}GeoNode is an open source platform for sharing geospatial data and maps.{% endblocktrans %}</p>
+      <p>{% blocktrans %}If you have any questions about the software or service, join our <a href="https://groups.google.com/d/forum/geonode-users">mailing list</a>.{% endblocktrans %}</p>
+      <span>{% trans 'Need help?' %} <a href="http://docs.geonode.org/en/latest/tutorials/users/quickstart/index.html">{% trans 'Getting Started' %}</a></span>-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+  <h1 style="position:absolute; left:15%; right:15%; top:10px; text-align:right; font-size:42px; color:#2c689c" >{% trans "Welcome" %}  {% trans "at" %} {% trans "ERMIS-F Geoportal" %} </h1>
+
+      <img src="static/img/ermis_back5.png" alt="Welcome" style="height:400px; margin-left: auto; margin-right: auto;">
+      <div class="carousel-caption">
+       <!-- <h2>{% trans "Welcome" %}  {% trans "to the" %} {% trans "ERMIS-F Geoportal" %} </h2>-->
+       <!-- <p>LA is always so much fun!</p>-->
+      </div>
+	<!-- <img src="static/img/ermis_back.png" alt="Welcome" height="100" width="100">-->
+    </div>
+
+    <div class="item">
+  <p  style="position:absolute; width:90%; left:5%; right:15%; top:10px; text-align:center; font-size:28px; color:#2c689c" >{% trans "The Geoportal is an online platform for searching, viewing, downloading and editing spatial data related to flood risks" %}</p>
+      <img src="static/img/ermis_back.png" alt="Description" style="height:400px">
+      <div class="carousel-caption">
+        <!--<h3>Chicago</h3>-->
+<!--        <p>{% trans "The Geoportal is an online platform for searching, viewing, downloading and editing spatial data related to flood risks" %}</p>-->
+      </div>
+    </div>
+ <div class="item">
+  <p  style="position:absolute; width:90%; left:5%; right:15%; top:10px; text-align:center; font-size:28px; color:#2c689c" >{% trans "It provides access to the ERMIS-F Service for managing risks, focusing on floods" %} </p>
+      <img src="static/img/ermis_back2.png" alt="Description" style="height:400px; margin-left: auto;
+	margin-right: auto;">
+      <div class="carousel-caption">
+        <!--<h3>Chicago</h3>-->
+<!--        <p>{% trans "It provides access to the ERMIS-F Service for managing risks, focusing on floods" %}</p>-->
+      </div>
+    </div>
+
+    <div class="item">
+ <p  style="position:absolute; width:90%; left:5%; right:15%; top:10px; text-align:center; font-size:28px; color:#2c689c" >{% trans "For more details about ERMIS-F, visit "%}<a href="https://ermis-f.eu" target="new">ermis-f.eu</a></p>
+  <img src="static/img/ermis_back7.png" alt="More Details" style="height:400px; margin-left: auto; margin-right: auto;">
+      <div class="carousel-caption">
+        <!--<h3>New York</h3>-->
+<!--        <p>{% trans "For more details about ERMIS-F, visit "%}<a href="https://ermis-f.eu" target="new">www.ermis-floods.eu</p>-->
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      <!--   <h1> {% trans "Welcome" %}  {% trans "at" %} {% trans "ERMIS-F Geoportal" %}  </h1>
+	<p><i>{% trans "Geoportal is an online platform for searching, viewing, downloading and editing spatial data related to food risks and provides access to the ERMIS-F Service for managing risks, focusing on floods" %}</i></p>
+<br\>
+	<p> {% trans "For more details about ERMIS-F, visit "%}<a href="https://ermis-f.eu" target="new">www.ermis-floods.eu</a></p>
+-->
+    </div>
+  </div>
+  {% endblock %}
+
+ {% block bigsearch %}
+
+
+
+      <div class="big-search" >
+      	<div class="container">
+      	
+      		<div class="search">
+      			<form id="search" action="{% url "search" %}" >
+		<table class="tblbigsearch">
+		<tr><td>
+			<span class="fa fa-search fa-3x"></span>
+      				{% if HAYSTACK_SEARCH %}
+      				<input id="search_input" type="text"  class="form-control" name="q">
+      				{% else %}
+      				<input id="search_input" type="text"  class="form-control" name="title__icontains">
+      				{% endif %}
+      		</td><td>	
+    <a class="btn btn-default btn-lg" style="font-size:18px" href="{% url "search" %}">{% trans "Advanced Search" %}</a></td></tr></table>
+</form>
+      		</div> 
+      	</div>
+      </div>
+
+      {% endblock bigsearch %}
+
+  {% block datasets %}
+ {% endblock datasets %}
+
+

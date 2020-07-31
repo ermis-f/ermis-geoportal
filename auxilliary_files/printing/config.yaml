@@ -1,0 +1,967 @@
+#===========================================================================
+# allowed DPIs
+#===========================================================================
+dpis:
+  - 96
+  - 150
+  - 300
+
+#===========================================================================
+# the allowed scales
+#===========================================================================
+scales:
+   - 1066
+   - 2132
+   - 4265
+   - 8530
+   - 17061
+   - 34123
+   - 68247
+   - 136494
+   - 272988
+   - 545977
+   - 1091955
+   - 2183910
+   - 4367821
+   - 8735642
+   - 17471285
+   - 34942571
+   - 69885143
+   - 139770286
+   - 279540572
+   - 559081145
+#  - 500.0
+#  - 1000.0
+#  - 2000.0
+#  - 5000.0
+#  - 10000.0
+#  - 15000.0
+#  - 30000.0
+#  - 60000.0
+#  - 120000.0
+#  - 240000.0
+#  - 500000.0
+#  - 1000000.0
+#  - 2000000.0
+#  - 5000000.0
+#  - 10000000.0
+#  - 20000000.0
+#  - 50000000.0
+
+outputFilename: 'GeoNode-Map-${date}.pdf'
+#== ms2 ===== 
+disableScaleLocking: true
+#======
+brokenUrlPlaceholder: 'default'
+# brokenUrlPlaceholder: 'throw'
+
+connectionTimeout: 2000
+socketTimeout: 2000
+proxyBaseUrl: http://ermis-geoportal.cyi.ac.cy/geoserver/pdf
+
+fonts:
+ - /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+   
+#===========================================================================
+# the list of allowed ips
+#===========================================================================
+hosts:
+  - !ipMatch
+    ip: 127.0.0.1
+  - !localMatch
+    dummy: true
+  - !acceptAll
+    dummy: true
+  - !dnsMatch
+    host: localhost
+    port: 80
+  - !dnsMatch
+    host: labs.metacarta.com
+    port: 80
+  - !dnsMatch
+    host: terraservice.net
+    port: 80
+  - !dnsMatch
+    host: tile.openstreetmap.org
+    port: 80
+  - !dnsMatch
+    host: www.geocat.ch
+    port: 80
+  - !dnsMatch
+    host: otile1.mqcdn.com
+    port: 80
+  - !dnsMatch
+    host: otile2.mqcdn.com
+    port: 80
+  - !dnsMatch
+    host: otile3.mqcdn.com
+    port: 80
+  - !dnsMatch
+    host: otile4.mqcdn.com
+    port: 80
+  - !dnsMatch
+    host: otile5.mqcdn.com
+    port: 80
+  - !dnsMatch
+    host: a.tile.openstreetmap.org
+    port: 80
+  - !dnsMatch
+    host: b.tile.openstreetmap.org
+    port: 80
+  - !dnsMatch
+    host: c.tile.openstreetmap.org
+    port: 80
+  - !dnsMatch
+    host: d.tile.openstreetmap.org
+    port: 80
+  - !dnsMatch
+    host: a.tile.openstreetmap.fr
+    port: 80
+  - !dnsMatch
+    host: b.tile.openstreetmap.fr
+    port: 80
+  - !dnsMatch
+    host: c.tile.openstreetmap.fr
+    port: 80
+  - !dnsMatch
+    host: d.tile.openstreetmap.fr
+    port: 80
+  - !dnsMatch
+    host: en.unesco.org
+    port: 80
+  - !dnsMatch
+    host: en.unesco.org/tiles
+    port: 80
+  - !dnsMatch
+    host: en.unesco.org/tiles/geodata
+    port: 80
+  - !dnsMatch
+    host: a.tile.openstreetmap.fr/hot
+    port: 80
+  - !dnsMatch
+    host: api.mapbox.com
+    port: 80
+  - !dnsMatch
+    host: api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles
+    port: 80
+  - !dnsMatch
+    host: api.mapbox.com/styles/v1/mapbox/streets-v9/tiles
+    port: 80
+#  - !dnsMatch
+#    host: server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer
+#    port: 80
+#  - !dnsMatch
+#    host: server.arcgisonline.com/ArcGIS/rest/services
+#    port: 80
+#  - !dnsMatch
+#    host: server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/
+#    port: 80
+#  - !dnsMatch
+#    host: server.arcgisonline.com
+#    port: 80
+
+
+#localHostForward:
+#  from: 
+#   - server.arcgisonline.com/ArcGIS/rest/services
+#   https2http: True
+
+
+layouts:
+  #goenode standard layout
+  #===========================================================================
+  A4_landscape :
+  #===========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 802 555
+      landscape: false
+      footer:
+          height: 5
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 8
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 30
+          absoluteY: 535
+          width: 752
+          widths: [120, 522]
+          items:
+            - !image
+              maxWidth: 100
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 18
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000
+        - !columns
+          absoluteX: 30
+          absoluteY: 485
+          width: 700
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 10
+              fontEncoding: Identity-H
+              text: '${comment}'   
+        - !map
+          width: 550
+          height: 400
+          absoluteX:30
+          absoluteY:445
+        #legend panel
+        - !columns
+          absoluteX: 595
+          absoluteY: 445
+          width: 500
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: 'Υπόμνημα'   
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+                borderWidthLeft: 1
+                borderColor: black
+                padding: 2
+                backgroundColor: white
+                vertAlign: bottom
+          widths: [195]
+          absoluteX: 595
+          absoluteY: 425
+          width: 195
+          height: 520
+          items:
+            - !legends
+              horizontalAlignment: left
+              layerFont: DejavuSans
+              classFont: DejavuSans
+              fontEncoding: Identity-H
+              iconMaxWidth: 120
+              iconMaxHeight: 200
+              layerSpace: 5
+              layerFontSize: 8      
+              classIndentation: 5
+              classFontSize: 5
+              textMaxWidth: 200
+              maxWidth: 200
+              maxHeight: 500
+              classSpace: 4
+              backgroundColor: #ffffff
+              failOnBrokenUrl: true
+              overflow: false
+        - !columns
+          absoluteX: 545
+          absoluteY: 440
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 535
+          absoluteY: 65
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 108
+              type: 'bar sub'
+              intervals: 5
+      
+  #mapstore2 layout
+  #=======A4 landscape with legend============================================
+  A4_portrait :
+  #===========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 595 842 
+      landscape: false
+      footer:
+          height: 5
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 8
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 30
+          absoluteY: 820
+          width: 560
+          widths: [120, 430]
+          items:
+            - !image
+              maxWidth: 100
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 16
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 30
+          absoluteY: 775
+          width: 560
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 10
+              fontEncoding: Identity-H
+              text: '${comment}'                  
+        - !map
+          height: 700
+          width: 410
+          absoluteX: 30
+          absoluteY: 740
+        #legend panel 
+        - !columns
+          absoluteX: 450
+          absoluteY: 740
+          width: 200
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: 'Υπόμνημα'           
+        - !columns               
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 2
+                borderWidthLeft: 1
+                borderColor: black
+                padding: 4
+                backgroundColor: white
+                vertAlign: bottom
+          widths: [150]
+          absoluteX: 450
+          absoluteY: 720
+          width: 140
+          items:
+            - !legends
+              horizontalAlignment: left
+              #iconMaxWidth: 150
+              layerFont: DejavuSans
+              classFont: DejavuSans
+              fontEncoding: Identity-H
+              iconMaxWidth: 120
+              iconMaxHeight: 200
+              layerSpace: 5
+              layerFontSize: 8
+              classIndentation: 5
+              textMaxWidth: 90
+              maxWidth: 130
+              maxHeight: 700
+              classFontSize: 6
+              classSpace: 4
+              backgroundColor: #ffffff
+              failOnBrokenUrl: false
+              overflow: false
+        - !columns
+          absoluteX: 405
+          absoluteY: 720
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 395
+          absoluteY: 65
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 108
+              type: 'bar sub'
+              intervals: 5
+            
+  #=======A4 portrait no legend=============================================
+  A4_portrait_no_legend :
+  #=========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 595 842 
+      landscape: false
+      footer:
+          height: 5
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 8
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 30
+          absoluteY: 820
+          width: 560
+          widths: [120, 430]
+          items:
+            - !image
+              maxWidth: 100
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 16
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 30
+          absoluteY: 775
+          width: 560
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 10
+              fontEncoding: Identity-H
+              text: '${comment}'                     
+        - !map
+          height: 700
+          width: 535
+          absoluteX: 30
+          absoluteY: 740
+        - !columns
+          absoluteX: 535
+          absoluteY: 720
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 525
+          absoluteY: 65
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5
+  #=======A4 landscape no legend=============================================
+  A4_landscape_no_legend :
+  #===========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 842 595
+      landscape: false
+      footer:
+          height: 5
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 8
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 30
+          absoluteY: 575
+          width: 800
+          widths: [120, 460]
+          items:
+            - !image
+              maxWidth: 100
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 16
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 30
+          absoluteY: 535
+          width: 800
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 10
+              fontEncoding: Identity-H
+              text: '${comment}'    
+        - !map
+          width: 780
+          height: 470
+          absoluteX: 30
+          absoluteY: 505
+        - !columns
+          absoluteX: 785
+          absoluteY: 490
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 770
+          absoluteY: 65
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5
+  #=======A3 portrait with legend=============================================
+  A3_portrait :
+  #===========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 842 1190
+      landscape: false
+      footer:
+          height: 10
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 12
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 40
+          absoluteY: 1150
+          width: 800
+          widths: [200, 560]
+          items:
+            - !image
+              maxWidth: 200
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 20
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 40
+          absoluteY: 1070
+          width: 800
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: '${comment}'   
+        - !map
+          width: 550
+          height: 950
+          absoluteX: 40
+          absoluteY: 1030
+        #legend panel  
+        - !columns
+          absoluteX: 598
+          absoluteY: 1030
+          width: 200
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: 'Υπόμνημα'         
+        - !columns               
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 2
+                borderWidthLeft: 1
+                borderColor: black
+                padding: 4
+                backgroundColor: white
+                vertAlign: bottom
+          widths: [241]
+          absoluteX: 598
+          absoluteY: 1010
+          width: 240
+          items:
+            - !legends
+              horizontalAlignment: left
+              #iconMaxWidth: 150
+              layerFont: DejavuSans
+              classFont: DejavuSans
+              fontEncoding: Identity-H
+              iconMaxHeight: 0
+              layerSpace: 5
+              layerFontSize: 10
+              classIndentation: 5
+              classFontSize: 8
+              classSpace: 4
+              maxWidth: 240
+              maxHeight: 930
+              backgroundColor: #ffffff
+              failOnBrokenUrl: false  
+        - !columns
+          absoluteX: 550
+          absoluteY: 1010
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 540
+          absoluteY: 100
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5 
+  #=======A3 landscape with legend============================================
+  A3_landscape :
+  #===========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 1190 842
+      landscape: false
+      footer:
+          height: 10
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 12
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 40
+          absoluteY: 820
+          width: 1105
+          widths: [200, 900]
+          items:
+            - !image
+              maxWidth: 200
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 20
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 40
+          absoluteY: 760
+          width: 1100
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: '${comment}'    
+        - !map
+          width: 837
+          height: 680
+          absoluteX:40
+          absoluteY:720
+        #legend panel  
+        - !columns
+          absoluteX: 890
+          absoluteY: 720
+          width: 200
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: 'Υπόμνημα'   
+        - !columns               
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 2
+                borderWidthLeft: 1
+                borderColor: black
+                padding: 4
+                backgroundColor: white
+                vertAlign: bottom
+          widths: [280]
+          absoluteX: 890
+          absoluteY: 700
+          width: 280
+          items:
+            - !legends
+              horizontalAlignment: left
+              iconMaxWidth: 300
+              layerFont: DejavuSans
+              classFont: DejavuSans
+              fontEncoding: Identity-H
+              iconMaxHeight: 400
+              layerSpace: 5
+              layerFontSize: 10
+              classIndentation: 5
+              classFontSize: 8
+              classSpace: 4
+              maxWidth: 280
+              maxHeight: 650
+              backgroundColor: #ffffff
+              failOnBrokenUrl: false
+              overflow: false  
+        - !columns
+          absoluteX: 850
+          absoluteY: 710
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 830
+          absoluteY: 80
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5   
+  #=======A3 portrait no legend============================================
+  A3_portrait_no_legend :
+  #========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 842 1190
+      landscape: false
+      footer:
+          height: 10
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 12
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 42
+          absoluteY: 1150
+          width: 780
+          widths: [200, 560]
+          items:
+            - !image
+              maxWidth: 200
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 20
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 40
+          absoluteY: 1070
+          width: 800
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: '${comment}'
+        - !map
+          width: 760
+          height: 950
+          absoluteX: 40
+          absoluteY: 1030
+        - !columns
+          absoluteX: 770
+          absoluteY: 1010
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 760
+          absoluteY: 100
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5 
+  #=======A3 landscape no legend============================================
+  A3_landscape_no_legend :
+  #=========================================================================
+    metaData:
+      title: '${mapTitle}'
+      author: 'ERMIS-F'
+      subject: 'Simple layout'
+      keywords: 'map,print'
+      creator: 'ERMIS-F'
+    mainPage:
+      rotation: true
+      pageSize: 1190 842
+      landscape: false
+      footer:
+          height: 10
+          items:
+                - !text
+                  width: 120
+                  text: '${now dd/MM/yyyy}'
+                  fontEncoding: Cp1252
+                  fontSize: 12
+                  align: left
+                  vertAlign: bottom
+      items:
+        - !columns
+          absoluteX: 42
+          absoluteY: 814
+          width: 1105
+          widths: [200, 900]
+          items:
+            - !image
+              maxWidth: 200
+              url: '/${configDir}/print_header.png'
+            - !text
+              font: DejaVuSans
+              fontSize: 20
+              fontColor: #000000
+              fontEncoding: Identity-H
+              spacingAfter: 20
+              text: '${mapTitle}'
+              maxLength: 1000 
+        - !columns
+          absoluteX: 40
+          absoluteY: 750
+          width: 1100
+          items:
+            - !text
+              font: DejaVuSans
+              fontSize: 12
+              fontEncoding: Identity-H
+              text: '${comment}'     
+        - !map
+          width: 1102
+          height: 680
+          absoluteX:42
+          absoluteY:720
+        - !columns
+          absoluteX: 1100
+          absoluteY: 700
+          width: 40
+          items:
+            - !image
+              maxWidth: 40
+              maxHeight: 40
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              rotation: '${rotation}'
+        - !columns
+          absoluteX: 1080
+          absoluteY: 100
+          width: 40
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 150
+              type: 'bar sub'
+              intervals: 5   
+       
+ 

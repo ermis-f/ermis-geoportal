@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 14:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ermis/templates/site_index.html:9 ermis/templates/site_index.html:26
+#: ermis/templates/site_index.html:30 ermis/templates/site_index.html:74
+msgid "Welcome"
+msgstr ""
+
+#: ermis/templates/site_index.html:10
+msgid ""
+"GeoNode is an open source platform for sharing geospatial data and maps."
+msgstr ""
+
+#: ermis/templates/site_index.html:11
+msgid ""
+"If you have any questions about the software or service, join our <a href="
+"\"https://groups.google.com/d/forum/geonode-users\">mailing list</a>."
+msgstr ""
+
+#: ermis/templates/site_index.html:12
+msgid "Need help?"
+msgstr ""
+
+#: ermis/templates/site_index.html:12
+msgid "Getting Started"
+msgstr ""
+
+#: ermis/templates/site_index.html:26 ermis/templates/site_index.html:74
+msgid "at"
+msgstr "στη"
+
+#: ermis/templates/site_index.html:26 ermis/templates/site_index.html:30
+#: ermis/templates/site_index.html:74
+msgid "ERMIS-F Geoportal"
+msgstr "Γεωπύλη ERMIS-F"
+
+#: ermis/templates/site_index.html:30
+msgid "to the"
+msgstr "στη"
+
+#: ermis/templates/site_index.html:37 ermis/templates/site_index.html:41
+msgid ""
+"The Geoportal is an online platform for searching, viewing, downloading and "
+"editing spatial data related to flood risks"
+msgstr ""
+"Η Γεωπύλη είναι μια διαδικτυακή πλατφόρμα αναζήτησης, προβολής, λήψης και "
+"επεξεργασίας χωρικών δεδομένων και χαρτών που σχετίζονται με τον πλημμυρικό "
+"κίνδυνο"
+
+#: ermis/templates/site_index.html:45 ermis/templates/site_index.html:50
+msgid ""
+"It provides access to the ERMIS-F Service for managing risks, focusing on "
+"floods"
+msgstr ""
+"Παρέχει πρόσβαση στην Ολοκληρωμένη Δημόσια Υποστηριζόμενη Υπηρεσία ERMIS-F "
+"για τη διαχείριση περιβαλλοντικών κινδύνων με έμφαση στις πλημμύρες."
+
+#: ermis/templates/site_index.html:55 ermis/templates/site_index.html:59
+#: ermis/templates/site_index.html:77
+msgid "For more details about ERMIS-F, visit "
+msgstr ""
+"Για περισσότερες πληροφορίες σχετικά με την Πράξη ERMIS-F, επισκεφτείτε την "
+"ιστοσελίδα "
+
+#: ermis/templates/site_index.html:75
+#, fuzzy
+#| msgid ""
+#| "Geoportal is an online platform for searching, viewing, downloading and "
+#| "editing spatial data related to food risks"
+msgid ""
+"Geoportal is an online platform for searching, viewing, downloading and "
+"editing spatial data related to food risks and provides access to the ERMIS-"
+"F Service for managing risks, focusing on floods"
+msgstr ""
+"Η Γεωπύλη είναι μια διαδικτυακή πλατφόρμα αναζήτησης, προβολής, λήψης και "
+"επεξεργασίας χωρικών δεδομένων και χαρτών που σχετίζονται με τον πλημμυρικό "
+"κίνδυνο"
+
+#: ermis/templates/site_index.html:101
+msgid "Advanced Search"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:4
+msgid "About GeoNode"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:7
+#: ermis/templates/static_maps/crete.html:7
+#: ermis/templates/static_maps/crete22.html:7
+#: ermis/templates/static_maps/cyprus.html:7
+#: ermis/templates/static_maps/cyprus22.html:7
+#: ermis/templates/static_maps/vaigaio.html:7
+#, fuzzy
+#| msgid "Floods Maps"
+msgid "Flood Maps"
+msgstr "Πλυμμηρικοί Χάρτες"
+
+#: ermis/templates/static_maps/about.html:10
+#: ermis/templates/static_maps/crete.html:10
+#: ermis/templates/static_maps/crete22.html:10
+#: ermis/templates/static_maps/cyprus.html:10
+#: ermis/templates/static_maps/cyprus22.html:10
+#: ermis/templates/static_maps/vaigaio.html:10
+msgid "Knowledge Base"
+msgstr "Βάση Γνώσης"
+
+#: ermis/templates/static_maps/about.html:11
+#: ermis/templates/static_maps/crete.html:11
+#: ermis/templates/static_maps/crete22.html:11
+#: ermis/templates/static_maps/cyprus.html:11
+#: ermis/templates/static_maps/cyprus22.html:11
+#: ermis/templates/static_maps/vaigaio.html:11
+msgid "Crowdsourcing"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:12
+#: ermis/templates/static_maps/crete.html:12
+#: ermis/templates/static_maps/cyprus.html:13
+#: ermis/templates/static_maps/vaigaio.html:12
+#, fuzzy
+#| msgid "ERMIS-F Geoportal"
+msgid "Geoportal"
+msgstr "Γεωπύλη ERMIS-F"
+
+#: ermis/templates/static_maps/about.html:15
+#: ermis/templates/static_maps/crete.html:13
+#: ermis/templates/static_maps/crete22.html:12
+#: ermis/templates/static_maps/cyprus.html:16
+#: ermis/templates/static_maps/cyprus22.html:12
+#: ermis/templates/static_maps/vaigaio.html:15
+msgid "Social Media"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:16
+#: ermis/templates/static_maps/crete.html:14
+#: ermis/templates/static_maps/crete22.html:13
+#: ermis/templates/static_maps/cyprus.html:17
+#: ermis/templates/static_maps/cyprus22.html:13
+#: ermis/templates/static_maps/vaigaio.html:16
+#, fuzzy
+#| msgid "ERMIS-F Sub"
+msgid "ERMIS-F"
+msgstr ""
+"Αποτελεί μια διαδικτυακή πλατφόρμα αναζήτησης, προβολής, λήψης και "
+"επεξεργασίας χωρικών δεδομένων και χαρτών που σχετίζονται με τον πλημμυρικό "
+"κίνδυνο, και διασυνδέει όλες τις εφαρμογές της Υπηρεσίας ERMIS-F (βάση "
+"γνώσης πλημμυρικού κινδύνου, εφαρμογή πληθοπορισμού, εφαρμογή κοινωνικής "
+"δικτύωσης, σύστημα έγκαιρης προειδοποίησης). Παρέχει ένα ολοκληρωμένο "
+"περιβάλλον πληροφόρησης και υποστήριξης λήψης αποφάσεων που αφορούν τους "
+"περιβαλλοντικούς κινδύνους και ιδιαίτερα τον πλημμυρικό κίνδυνο."
+
+#: ermis/templates/static_maps/about.html:22
+#: ermis/templates/static_maps/crete.html:22
+#: ermis/templates/static_maps/crete22.html:21
+#: ermis/templates/static_maps/cyprus.html:23
+#: ermis/templates/static_maps/cyprus22.html:19
+#: ermis/templates/static_maps/vaigaio.html:24
+msgid "Cyprus"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:24
+#: ermis/templates/static_maps/crete.html:24
+#: ermis/templates/static_maps/crete22.html:23
+#: ermis/templates/static_maps/cyprus.html:25
+#: ermis/templates/static_maps/cyprus22.html:21
+#: ermis/templates/static_maps/vaigaio.html:22
+msgid "North Aegean"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:25
+#: ermis/templates/static_maps/crete.html:20
+#: ermis/templates/static_maps/crete22.html:19
+#: ermis/templates/static_maps/cyprus.html:26
+#: ermis/templates/static_maps/cyprus22.html:22
+#: ermis/templates/static_maps/vaigaio.html:25
+msgid "Crete"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:36
+#, fuzzy
+#| msgid "Floods Maps"
+msgid "ERMIS-F Flood Maps"
+msgstr "Πλυμμηρικοί Χάρτες"
+
+#: ermis/templates/static_maps/about.html:40
+msgid ""
+"The Flood Maps application offers ready-made digital flood risk maps for "
+"citizens. Unlike ERMIS-F’s Geoportal, which is aimed mainly at professionals "
+"or requires some experience in GIS systems, the purpose here is the ease of "
+"use by everyone. The goal is for ordinary citizens to be informed about the "
+"dangers of flooding in their area and to take them into account in their "
+"decision-making process."
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:44
+msgid ""
+"Decisions may include the use of plots of land or other real estate, flood "
+"insurance, reduced exposure to floods, for example by placing non-valuables "
+"in their basements if they are in a high-risk area, or to take protective "
+"measures at home (raising fencing, waterproof doors etc.)."
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:48
+msgid "Some of the advantages of this application are:"
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:51
+msgid "It offers easy access to ready-made flood risk maps."
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:52
+msgid "It provides free data and allows printing."
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:53
+msgid ""
+"Flood Maps show areas with the highest risk of flooding so they can lead to "
+"more effective prevention. At the same time, and in combination with ERMIS-"
+"F’s Knowledge Base application, they offer important information about "
+"floods, flood control works and legislation."
+msgstr ""
+
+#: ermis/templates/static_maps/about.html:54
+msgid ""
+"It informs the residents about the flooding risk of a specific area and "
+"about taking appropriate self-protection measures."
+msgstr ""
+
+#: ermis/templates/static_maps/crete22.html:9
+#: ermis/templates/static_maps/cyprus22.html:9
+msgid "GIS Portal"
+msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "The Geoportal is an online platform for searching, viewing, downloading "
+#~| "and editing spatial data related to flood risks"
+#~ msgid ""
+#~ "The Geoportal is an online platform for searching, viewing, downloading "
+#~ "and editing spatial data related to food risks"
+#~ msgstr ""
+#~ "Η Γεωπύλη είναι μια διαδικτυακή πλατφόρμα αναζήτησης, προβολής, λήψης και "
+#~ "επεξεργασίας χωρικών δεδομένων και χαρτών που σχετίζονται με τον "
+#~ "πλημμυρικό κίνδυνο"
+
+#~ msgid "Early Warning System"
+#~ msgstr "Σύστημα Έγκαιρης Προειδοποίησης"
+
+#~ msgid "Logout"
+#~ msgstr "Αποσύνδεση"
+
+#, fuzzy
+#~| msgid "Upload Layer"
+#~ msgid "Explore layers"
+#~ msgstr "Ανέβάστε Επίπεδο"
+
+#, fuzzy
+#~| msgid "Upload Document"
+#~ msgid "Document"
+#~ msgid_plural "Documents"
+#~ msgstr[0] "Ανεβάστε Έγγραφο"
+#~ msgstr[1] "Ανεβάστε Έγγραφο"
+
+#, fuzzy
+#~| msgid "Upload Document"
+#~ msgid "Add documents"
+#~ msgstr "Ανεβάστε Έγγραφο"
+
+#, fuzzy
+#~| msgid "Upload Document"
+#~ msgid "Explore documents"
+#~ msgstr "Ανεβάστε Έγγραφο"
+
+#~ msgid "Ermis-F Applications"
+#~ msgstr "Εφαρμογές Ermis-F"
+
+#~ msgid "Early Alert"
+#~ msgstr "Έγκαιρη Προειδοποίηση"
+
+#~ msgid "Search for Data."
+#~ msgstr "Αναζήτηση"
+
+#~ msgid "Data"
+#~ msgstr "Δεδομένα"

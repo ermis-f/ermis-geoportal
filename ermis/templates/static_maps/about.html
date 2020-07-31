@@ -1,0 +1,61 @@
+{% extends "ermis_base.html" %}
+
+{% load i18n %}
+{% block ermis_title %} {% trans "About GeoNode" %} — {{ block.super }} {% endblock %}
+
+{% block ermis_apps %}
+                                <li class="menu-item-has-children dropdown"><a href="https://geoportal.ermis-f.eu/static_maps/cyprus.html" class="js-activated btn btn-highlight" ><i class="icon-streamline-filter-picture"></i>{% trans "Flood Maps" %}<span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu sub-menu pull-left">
+
+                                        <li><a href="https://kb.ermis-f.eu/" ><i class="icon-streamline-school-graduation"></i>{% trans "Knowledge Base" %}</a></li>
+                                        <li><a href="https://cr.ermis-f.eu/" ><i class="icon-streamline-compatible-devices"></i>{% trans "Crowdsourcing" %}</a></li>
+ <li><a href="https://geoportal.ermis-f.eu/" ><i class="icon-streamline-group-global"></i>{% trans "Geoportal" %}</a></li>
+
+
+                                        <li><a href="https://sm.ermis-f.eu/" ><i class="icon-streamline-friends"></i>{% trans "Social Media" %}</a></li>
+                                        <li><a href="https://ermis-f.eu/" ><i class="icon-home"></i>{% trans "ERMIS-F" %}</a></li>
+                                    </ul>
+                                </li>
+                                {% endblock ermis_apps %}
+
+ {% block ermis_app_menu %}
+     <li class="menu-item-has-children dropdown"><a href="#" class="js-activated" >{% trans "Cyprus" %} <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu sub-menu pull-left">
+                                        <li><a href="https://geoportal.ermis-f.eu/static_maps/vaigaio.html" >{% trans "North Aegean" %}</a></li>
+                                        <li><a href="https://geoportal.ermis-f.eu/static_maps/crete.html" >{% trans "Crete" %}</a></li>
+                                    </ul>
+                 </li>
+
+ {% endblock %}
+
+
+
+
+{% block ermis_content %}
+<div style="padding:60px;">
+<h2 class="text-center">{% trans "ERMIS-F Flood Maps" %}</h2>
+<br/>
+<div class="container">
+<div class="row">
+{% trans "The Flood Maps application offers ready-made digital flood risk maps for citizens. Unlike ERMIS-F’s Geoportal, which is aimed mainly at professionals or requires some experience in GIS systems, the purpose here is the ease of use by everyone. The goal is for ordinary citizens to be informed about the dangers of flooding in their area and to take them into account in their decision-making process." %}
+</div>
+<br/>
+<div class="row">
+{% trans "Decisions may include the use of plots of land or other real estate, flood insurance, reduced exposure to floods, for example by placing non-valuables in their basements if they are in a high-risk area, or to take protective measures at home (raising fencing, waterproof doors etc.)." %}
+</div>
+<br/>
+<div class="row">
+{% trans "Some of the advantages of this application are:" %}
+</div>
+<ol>
+<li>{% trans "It offers easy access to ready-made flood risk maps." %}</li>
+<li>{% trans "It provides free data and allows printing." %}</li>
+<li>{% trans "Flood Maps show areas with the highest risk of flooding so they can lead to more effective prevention. At the same time, and in combination with ERMIS-F’s Knowledge Base application, they offer important information about floods, flood control works and legislation." %}</li>
+<li>{% trans "It informs the residents about the flooding risk of a specific area and about taking appropriate self-protection measures." %}</li>
+
+</ol>
+
+<br/>
+</div>
+</div>
+{% endblock %}

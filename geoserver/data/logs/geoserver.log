@@ -1,0 +1,72 @@
+2019-06-25 16:24:56,576 WARN [geoserver.config] - Error reading resource URL [jar:file:/home/geonode/ermis/geoserver/geoserver/WEB-INF/lib/gs-geofence-server-2.15.1.jar!/geofence-default-override.properties]
+java.io.FileNotFoundException: URL [jar:file:/home/geonode/ermis/geoserver/geoserver/WEB-INF/lib/gs-geofence-server-2.15.1.jar!/geofence-default-override.properties] cannot be resolved to absolute file path because it does not reside in the file system: jar:file:/home/geonode/ermis/geoserver/geoserver/WEB-INF/lib/gs-geofence-server-2.15.1.jar!/geofence-default-override.properties
+	at org.springframework.util.ResourceUtils.getFile(ResourceUtils.java:217)
+	at org.springframework.core.io.AbstractFileResolvingResource.getFile(AbstractFileResolvingResource.java:154)
+	at org.springframework.core.io.UrlResource.getFile(UrlResource.java:227)
+	at org.geoserver.config.SpringResourceAdaptor.relative(SpringResourceAdaptor.java:35)
+	at org.geoserver.config.GeoServerPropertyOverrideConfigurer.setLocations(GeoServerPropertyOverrideConfigurer.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.BeanWrapperImpl$BeanPropertyHandler.setValue(BeanWrapperImpl.java:332)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.processLocalProperty(AbstractNestablePropertyAccessor.java:458)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.setPropertyValue(AbstractNestablePropertyAccessor.java:278)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.setPropertyValue(AbstractNestablePropertyAccessor.java:266)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:97)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1698)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:154)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:400)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:291)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:532)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:344)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1514)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1476)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:261)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:113)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:113)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+	at org.eclipse.jetty.server.Server.start(Server.java:449)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:416)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.runner.Runner.run(Runner.java:518)
+	at org.eclipse.jetty.runner.Runner.main(Runner.java:559)
+2019-06-25 16:24:57,900 WARN [ejb.Ejb3Configuration] - hibernate.connection.autocommit = false break the EJB3 specification
+2019-06-25 16:24:57,938 WARN [dialect.H2Dialect] - The 1.1.119 version of H2 implements temporary table creation such that it commits current transaction; multi-table, bulk hql/jpaql will not work properly
+2019-06-25 16:24:58,334 WARN [dialect.H2Dialect] - The 1.1.119 version of H2 implements temporary table creation such that it commits current transaction; multi-table, bulk hql/jpaql will not work properly
+2019-06-25 16:24:58,476 WARN [cache.EhCacheProvider] - Could not find configuration [RuleLimits]; using defaults.
+2019-06-25 16:24:58,537 WARN [cache.EhCacheProvider] - Could not find configuration [Rule]; using defaults.
+2019-06-25 16:24:58,543 WARN [cache.EhCacheProvider] - Could not find configuration [usergroup]; using defaults.
+2019-06-25 16:24:58,546 WARN [cache.EhCacheProvider] - Could not find configuration [GSUser]; using defaults.
+2019-06-25 16:24:58,550 WARN [cache.EhCacheProvider] - Could not find configuration [GFUser]; using defaults.
+2019-06-25 16:24:58,553 WARN [cache.EhCacheProvider] - Could not find configuration [gsinstance]; using defaults.
+2019-06-25 16:24:58,558 WARN [cache.EhCacheProvider] - Could not find configuration [LayerDetails]; using defaults.
+2019-06-25 16:25:01,215 WARN [platform.resource] - There is code leaving resource input streams open, locks around them might not be cleared! Add -Dgs.lock.trace=true to your JVM options to get a full stack trace of the code that acquired the input stream
+2019-06-25 16:25:08,914 WARN [gce.imagemosaic] - Unable to set ordering between tiff readers spi
+2019-06-25 16:25:11,637 WARN [auth.GeoFenceAuthenticationProvider] - INIT FROM CONFIG
